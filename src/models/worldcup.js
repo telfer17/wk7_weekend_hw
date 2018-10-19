@@ -10,7 +10,6 @@ WorldCup.prototype.getData = function () {
   const request = new RequestHelper(url);
   request.get().then((data) => {
     this.data = data;
-    console.log(data);
     PubSub.publish('WorldCup:data-ready', this.data);
   })
 };
