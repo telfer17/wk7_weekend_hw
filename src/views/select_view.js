@@ -5,7 +5,7 @@ const SelectView = function (selectElement) {
 };
 
 SelectView.prototype.bindEvents = function () {
-  PubSub.subscribe('Munros:regions-ready', (event) => {
+  PubSub.subscribe('WorldCup:rounds-ready', (event) => {
     this.populateSelect(event.detail);
   });
 
@@ -15,16 +15,16 @@ SelectView.prototype.bindEvents = function () {
   });
 };
 
-SelectView.prototype.populateSelect = function (regions) {
-  regions.forEach((region, index) => {
-    const option = this.createRegionOption(region, index);
+SelectView.prototype.populateSelect = function (rounds) {
+  rounds.forEach((round, index) => {
+    const option = this.createRoundOption(round, index);
     this.selectElement.appendChild(option);
   })
 };
 
-SelectView.prototype.createRegionOption = function (region, index) {
+SelectView.prototype.createRoundOption = function (round, index) {
   const option = document.createElement('option');
-  option.textContent = region;
+  option.textContent = round;
   option.value = index;
   return option;
 };

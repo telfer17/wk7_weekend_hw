@@ -37,7 +37,7 @@ WCDisplayView.prototype.createAwayHeading = function () {
 };
 
 WCDisplayView.prototype.createScore = function () {
-  const score = document.createElement('h3');
+  const score = document.createElement('h2');
   score.classList.add('result');
   score.textContent = `${this.game.home_team.goals} - ${this.game.away_team.goals}`;
   return score;
