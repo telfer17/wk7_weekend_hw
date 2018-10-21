@@ -16,22 +16,22 @@ WCDisplayView.prototype.render = function () {
   const score = this.createScore();
   gameContainer.appendChild(score);
 
-  // const home11 = this.createHomeTeam()
-  // this.container.appendChild(home11)
+  // const home_eleven = this.createHomeTeam();
+  // gameContainer.appendChild(home_eleven);
 
   this.container.appendChild(gameContainer);
 };
 
 WCDisplayView.prototype.createHomeHeading = function () {
   const homeTeam = document.createElement('h2');
-  homeTeam.classList.add('team-name');
+  homeTeam.classList.add('home-name');
   homeTeam.textContent = this.game.home_team.country;
   return homeTeam;
 };
 
 WCDisplayView.prototype.createAwayHeading = function () {
   const awayTeam = document.createElement('h2');
-  awayTeam.classList.add('team-name');
+  awayTeam.classList.add('away-name');
   awayTeam.textContent = this.game.away_team.country;
   return awayTeam;
 };
@@ -44,13 +44,13 @@ WCDisplayView.prototype.createScore = function () {
 };
 
 // WCDisplayView.prototype.createHomeTeam = function (players) {
-//   const ul = document.createElement('ul')
-//   players.forEach((player) => {
-//     const listItem = document.createElement('li')
-//     listItem.textContent = player
-//     ul.appendChild(listItem)
+//   const home_lineup = this.game.home_team_statistics.starting_eleven;
+//   const names = home_lineup.map(player => player.name);
+//   home_lineup.forEach(player => {
+//     let li = document.createElement('li');
+//     li.textContent = player.name;
+//     return home_lineup
 //   })
-//   return ul
 // };
 
 
