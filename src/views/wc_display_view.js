@@ -16,6 +16,9 @@ WCDisplayView.prototype.render = function () {
   const score = this.createScore();
   gameContainer.appendChild(score);
 
+  // const home11 = this.createHomeTeam()
+  // this.container.appendChild(home11)
+
   this.container.appendChild(gameContainer);
 };
 
@@ -40,19 +43,14 @@ WCDisplayView.prototype.createScore = function () {
   return score;
 };
 
-// WCDisplayView.prototype.createMunroHeight = function () {
-//   const height = document.createElement('p');
-//   height.classList.add('munro-height');
-//   height.textContent = `Height: ${this.munro.height} metres`;
-//   return height;
-// };
-//
-//
-// WCDisplayView.prototype.createMunroRegion = function () {
-//   const region = document.createElement('p');
-//   region.classList.add('munro-region');
-//   region.textContent = `Region: ${this.munro.region}`;
-//   return region;
+// WCDisplayView.prototype.createHomeTeam = function (players) {
+//   const ul = document.createElement('ul')
+//   players.forEach((player) => {
+//     const listItem = document.createElement('li')
+//     listItem.textContent = player
+//     ul.appendChild(listItem)
+//   })
+//   return ul
 // };
 
 

@@ -1,0 +1,17 @@
+@font-face {
+    font-family: "FIFAWC2018";
+    src: url("../fonts/FIFAWC2018.ttf");
+}
+
+body {
+  font-family: "FIFAWC2018";
+}
+
+#worldcup-select {
+  margin-bottom: 20px;
+}
+
+.team-name {
+  display: inline;
+  padding-right: 20px;
+}
