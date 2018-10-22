@@ -16,8 +16,11 @@ WCDisplayView.prototype.render = function () {
   const score = this.createScore();
   gameContainer.appendChild(score);
 
-  // const home_eleven = this.createHomeTeam();
-  // gameContainer.appendChild(home_eleven);
+  const home_eleven = this.createHomeTeam();
+  gameContainer.appendChild(home_eleven);
+
+  const away_eleven = this.createAwayTeam();
+  gameContainer.appendChild(away_eleven);
 
   this.container.appendChild(gameContainer);
 };
@@ -43,15 +46,33 @@ WCDisplayView.prototype.createScore = function () {
   return score;
 };
 
-// WCDisplayView.prototype.createHomeTeam = function (players) {
-//   const home_lineup = this.game.home_team_statistics.starting_eleven;
-//   const names = home_lineup.map(player => player.name);
-//   home_lineup.forEach(player => {
-//     let li = document.createElement('li');
-//     li.textContent = player.name;
-//     return home_lineup
-//   })
-// };
+WCDisplayView.prototype.createHomeTeam = function (players) {
+  const home_lineup = this.game.home_team_statistics.starting_eleven;
+  const names = home_lineup.map(player => player.name);
+
+  let ul = document.createElement("ul");
+  home_lineup.forEach(player => {
+    let li = document.createElement('li');
+    li.textContent = `${player.shirt_number}. ${player.name}`;
+    ul.appendChild(li);
+  })
+
+  return ul;
+};
+
+WCDisplayView.prototype.createAwayTeam = function (players) {
+  const away_lineup = this.game.away_team_statistics.starting_eleven;
+  const names = away_lineup.map(player => player.name);
+
+  let ul = document.createElement("ul");
+  away_lineup.forEach(player => {
+    let li = document.createElement('li');
+    li.textContent = `${player.shirt_number}. ${player.name}`;
+    ul.appendChild(li);
+  })
+
+  return ul;
+};
 
 
 module.exports = WCDisplayView;

@@ -58,3 +58,7 @@ body {
   justify-content: center;
   text-decoration: none;
 }
+
+ul {
+  list-style: none;
+}
